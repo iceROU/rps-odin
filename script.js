@@ -1,18 +1,17 @@
 // console.log("Henlo!")
 
+let choices = ["rock", "paper", "scissors"];
+
 function getComputerChoice(){
-    let choice =  Math.floor(Math.random() * 3);
-    console.log(choice);
-    if (choice === 0){
-        choice = 'Rock';
-    }
-    else if (choice === 1){
-        choice = 'Paper';
-    }
-    else {
-        choice = 'Scissors'
-    }
-    return choice;
+    let choice = choices[(Math.floor(Math.random() * choices.length))];
+    return choice
 }
 
 console.log(getComputerChoice());
+
+function playRound(playerSelection, computerSelection) {
+
+}
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection,computerSelection));
