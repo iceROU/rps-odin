@@ -7,8 +7,6 @@ function getComputerChoice(){
     return choice
 }
 
-// console.log(getComputerChoice());
-
 function getUserInput() {
     let choice = prompt("Choose rock, paper or scissors").toLowerCase();
     do {
@@ -19,18 +17,37 @@ function getUserInput() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    if(computerSelection == "rock") {
-        return "draw";
+    if(computerSelection == "rock" && playerSelection == "rock") {
+        return `draw - ${computerSelection} vs ${playerSelection}`;
     }
-    else if(computerSelection == "paper") {
-        return "You Lose! Paper beats Rock";
+    else if(computerSelection == "rock" && playerSelection == "paper") {
+        return `You win! ${playerSelection} beats ${computerSelection}`;
     }
-    else if(computerSelection == "scissors") {
-        return "You Win! Rock beats Scrissors"
+    else if(computerSelection == "rock" && playerSelection == "scissors") {
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+    }
+    else if(computerSelection == "paper" && playerSelection == "rock") {
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+    }
+    else if(computerSelection == "paper" && playerSelection == "paper") {
+        return `draw - ${computerSelection} vs ${playerSelection}`;
+    }
+    else if(computerSelection == "paper" && playerSelection == "scissors") {
+        return `You win! ${playerSelection} beats ${computerSelection}`;
+    }
+    else if(computerSelection == "scissors" && playerSelection == "rock") {
+        return `You win! ${playerSelection} beats ${computerSelection}`;
+    }
+    else if(computerSelection == "scissors" && playerSelection == "paper") {
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+    }
+    else if(computerSelection == "scissors" && playerSelection == "scissors") {
+        return `draw - ${computerSelection} vs ${playerSelection}`;
     }
 }
-const playerSelection = "rock";
+// const playerSelection = "rock";
 const computerSelection = getComputerChoice();
-console.log(computerSelection);
+const playerSelection = getUserInput();
+console.log(`Computer - ${computerSelection}`);
+console.log(`Player - ${playerSelection}`);
 console.log(playRound(playerSelection,computerSelection));
-console.log(getUserInput());
