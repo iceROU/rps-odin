@@ -8,7 +8,7 @@ function getComputerChoice(){
 }
 
 function getUserInput() {
-    let choice = prompt("Choose rock, paper or scissors").toLowerCase();
+    let choice;
     do {
         choice = prompt("Choose rock, paper or scissors").toLowerCase();
     }
@@ -45,9 +45,28 @@ function playRound(playerSelection, computerSelection) {
         return `draw - ${computerSelection} vs ${playerSelection}`;
     }
 }
-// const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-const playerSelection = getUserInput();
-console.log(`Computer - ${computerSelection}`);
-console.log(`Player - ${playerSelection}`);
-console.log(playRound(playerSelection,computerSelection));
+
+function playGame() {
+    let rounds = 5;
+    let computerScore = 0;
+    let playerScore = 0;
+    for (let i = 1; i<=rounds; i++) {
+        const computerSelection = getComputerChoice();
+        const playerSelection = getUserInput();
+        console.log(`round ${i} - Computer - ${computerSelection} || Player - ${playerSelection}`);
+        if (playRound(playerSelection, computerSelection).substring(0,5) == 'draw '){
+            computerScore += 0;
+            playerScore += 0;
+        }
+        else if (playRound(playerSelection, computerSelection).substring(0,5) == 'You L'){
+            computerScore += 1;
+        }
+        else if (playRound(playerSelection, computerSelection).substring(0,5) == 'You w'){
+            playerScore += 1;
+        }
+        console.log(playRound(playerSelection, computerSelection));
+    }
+    console.log(`Final score: Computer: ${computerScore} || Player: ${playerScore}`);
+}
+
+playGame();
