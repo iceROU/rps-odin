@@ -69,4 +69,4 @@ function playGame() {
     console.log(`Final score: Computer: ${computerScore} || Player: ${playerScore}`);
 }
 
-playGame();
+// playGame();

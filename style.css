@@ -1,0 +1,26 @@
+.button-div {
+    display: flex;
+    background-color: rgb(190, 190, 190);
+    justify-content: space-evenly;
+}
+#rock {
+    background-color: grey;
+    color: black;
+    padding: 10px;
+}
+#paper {
+    background-color: whitesmoke;
+    color: darkgreen;
+    padding: 10px;
+}
+#scissors {
+    background-color: red;
+    color: silver;
+    padding: 10px;
+}
+html {
+    background-color: rgb(190, 190, 190);
+}
+button {
+    border-radius: 8px;
+}
